@@ -26,30 +26,30 @@ class App {
           await this.userController.getAllUsers(req, res);
         } else if (method === 'GET' && urlParts.length === 3) {
           const userId = urlParts[2];
-          if (!validateUUID(userId)) {
+          if (!validateUUID(userId!)) {
             res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Invalid user ID' }));
             return;
           }
-          await this.userController.getUserById(req, res, userId);
+          await this.userController.getUserById(req, res, userId!);
         } else if (method === 'POST' && urlParts.length === 2) {
           await this.userController.createUser(req, res);
         } else if (method === 'PUT' && urlParts.length === 3) {
           const userId = urlParts[2];
-          if (!validateUUID(userId)) {
+          if (!validateUUID(userId!)) {
             res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Invalid user ID' }));
             return;
           }
-          await this.userController.updateUser(req, res, userId);
+          await this.userController.updateUser(req, res, userId!);
         } else if (method === 'DELETE' && urlParts.length === 3) {
           const userId = urlParts[2];
-          if (!validateUUID(userId)) {
+          if (!validateUUID(userId!)) {
             res.writeHead(400, { 'Content-Type': 'application/json' });
             res.end(JSON.stringify({ error: 'Invalid user ID' }));
             return;
           }
-          await this.userController.deleteUser(req, res, userId);
+          await this.userController.deleteUser(req, res, userId!);
         } else {
           errorHandler(res, 404, 'Endpoint not found');
         }

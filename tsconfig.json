@@ -2,9 +2,9 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "target": "es2022",
+    "target": "esnext",
     "allowJs": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "moduleDetection": "force",
@@ -14,16 +14,16 @@
     "noImplicitAny": true,
     "noUncheckedIndexedAccess": true,
 
-    "moduleResolution": "bundler",
-    "module": "ESNext",
+    "moduleResolution": "nodenext",
+    "module": "NodeNext",
 
     "lib": ["es2022", "dom", "dom.iterable"],
 
-    "baseUrl": "",
+    "baseUrl": "./",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["**/*.ts"],
+  "include": ["src/**/*.ts", "eslint.config.js"],
   "exclude": ["node_modules", "dist", "tests"]
 }

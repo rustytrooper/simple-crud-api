@@ -12,7 +12,6 @@
   },
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start:dev": "ts-node-dev --respawn --transpile-only src/app.ts",
@@ -30,5 +29,9 @@
     "typescript-eslint": "^8.46.3",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "uuid": "^13.0.0"
   }
 }

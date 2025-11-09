@@ -1,6 +1,5 @@
 import cluster from 'cluster';
 import os from 'os';
-import { spawn } from 'child_process';
 
 const numCPUs = os.cpus().length;
 const basePort = parseInt(process.env.PORT || '4000');
